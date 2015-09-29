@@ -1,6 +1,6 @@
 Wildfeed
 
-#利用野狗javaScript Sdk开发的类似的微博的社交应用。
+###利用野狗javaScript Sdk开发的类似的微博的社交应用。
 
 ###[演示地址](http://wildfeed.wilddogapp.com/)　
 
