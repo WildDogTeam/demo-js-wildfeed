@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/WildDogTeam/demo-wildfeed.git"
+    "url": "git+https://github.com/WildDogTeam/demo-js-wildfeed.git"
   },
   "keywords": [
     "wilddog",
@@ -18,9 +18,9 @@
   "author": "Wilddog",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/WildDogTeam/demo-wildfeed/issues"
+    "url": "https://github.com/WildDogTeam/demo-js-wildfeed/issues"
   },
-  "homepage": "github.com/WildDogTeam/demo-wildfeed",
+  "homepage": "github.com/WildDogTeam/demo-js-wildfeed",
   "dependencies": {
     "gulp": "^3.8.8",
     "gulp-connect": "^2.0.6",
