@@ -215,10 +215,18 @@ WildfeedUI.prototype.renderHome = function(e) {
   $("#body").html(body);
 
   var self = this;
-  var loginButton = $("#login-button");
+  var loginButton = $("#login-button-weibo");
   loginButton.click(function(e) {
     e.preventDefault();
-    loginButton.css("visibility", "hidden");
+    loginButton.parent().css("visibility", "hidden");
+    self._spinner.spin($("#login-div").get(0));
+    self._wirefeed.login('weibo');
+  });
+
+var loginButton = $("#login-button-qq");
+  loginButton.click(function(e) {
+    e.preventDefault();
+    loginButton.parent().css("visibility", "hidden");
     self._spinner.spin($("#login-div").get(0));
     self._wirefeed.login('qq');
   });

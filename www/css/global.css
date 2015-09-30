@@ -533,11 +533,20 @@ label.checkbox input{margin-right: 5px;}
 .btn .icon.qq{
  margin-right:0px;
 }
+.btn .icon.weibo{
+  margin-right:-20px;
+}
 .icon.qq{
     background: url(../img/qq.png) no-repeat 0 0;
     height: 58px;
     width: 226px;
-   
+  
+}
+.icon.weibo{
+    background: url(../img/weibo.png) no-repeat 0 0;
+    height: 58px;
+    width: 226px;
+  
 }
 
 .btn .icon{margin-right: 10px;}

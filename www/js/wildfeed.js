@@ -10,6 +10,7 @@ function Wildfeed(baseURL,qqAppId, newContext) {
   this._currentSearch = null;
   this._baseURL = baseURL;
   this._qqAppId = qqAppId;
+  this._provider = 'qq';
 
   // Every time we call firebaseRef.on, we need to remember to call .off,
   // when requested by the caller via unload(). We'll store our handlers
@@ -48,11 +49,19 @@ Wildfeed.prototype = {
     return match && decodeURIComponent(match[1].replace(/\+/g, " "));
   },
   _getPicURL: function(id, large) {
+    var isweibo = false;
     if (id) {
-      id = id.replace('qq:', '');
+      isweibo = id.indexOf('weibo')>=0?true:false;
+      id=id.replace('qq:', '');
+      id=id.replace('weibo:','');
     }
-    // 你也可以从 user.qq.CacheUserProfile.figureurl获取用户的图片
-    return "http://qzapp.qlogo.cn/qzapp/"+this._qqAppId+"/"+id+"/100"
+    if(isweibo){
+       return "http://tp3.sinaimg.cn/"+id+"/180/0/1";
+    }else{
+       return "http://qzapp.qlogo.cn/qzapp/"+this._qqAppId+"/"+id+"/100"
+    }
+    //http://tp3.sinaimg.cn/5497232002/180/0/1
+
   },
   _onNewSparkForFeed: function(feed, onComplete, onOverflow) {
     var self = this;
@@ -125,10 +134,8 @@ Wildfeed.prototype.onLoginStateChange = function(onLoginStateChange) {
  * @param    {string}    provider    The authentication provider to use.
  */
 Wildfeed.prototype.login = function(provider) {
-  //authAnonymously
-    // this._wilddog.authWithOAuthPopup(provider, this.onLogin.bind(this));
+    this._provider =  provider;
     this._wilddog.authWithOAuthPopup(provider, this.onLogin.bind(this));
-    //this._wilddog.authAnonymously(this.onLogin.bind(this);
 };
 
 /**
@@ -156,15 +163,16 @@ Wildfeed.prototype.logout = function() {
 Wildfeed.prototype.onLogin = function(user) {
   var self = this;
   if (!user) { return; }
+  var  uinfo = typeof(user['qq'])=='undefined'?user['weibo']:user['qq'];
   this._uid = user.uid;
-  this._qqId = user.qq.id;
+  this._qqId = uinfo.id;
 
   // adapt model to old scheme
-  var username = user.qq.username.split(' ');
+  var username = uinfo.username.split(' ');
   user.first_name = username[0];
   user.last_name = username[username.length - 1];
   user.id = user.uid;
-  user.name = user.qq.username;
+  user.name = uinfo.username;
   user.location = '';
   user.bio = '';
 
