@@ -1,8 +1,12 @@
-### Wildfeed
+### demo-js-wildfeed
 
-###利用野狗javaScript Sdk开发的类似的微博的社交应用。
+利用野狗javaScript Sdk开发的类似的微博的社交应用。
 
-###[演示地址](http://wildfeed.wilddogapp.com/)　
+## 实例
+
+可以参考[wilddog demo](http://wildfeed.wilddogapp.com) 
+
+[![一个demo页面的快照](screenshot.png)](http://wildfeed.wilddogapp.com/)
 
 ### 授权
 ```HTML
@@ -53,6 +57,7 @@ bundle exec heel -p 3000 --no-launch-browser -r www/
 
 ## 相关文档
 
+* [wildfeed　ios版本](https://github.com/WildDogTeam/demo-ios-wildfeed)
 * [Wilddog 概览](https://z.wilddog.com/overview/guide)
 * [JavaScript SDK快速入门](https://z.wilddog.com/web/quickstart)
 * [JavaScript SDK 开发向导](https://z.wilddog.com/web/guide/1)
