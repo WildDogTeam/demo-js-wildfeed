@@ -47,7 +47,7 @@ npm install
 ```
 gulp
 ```
-你可以可以使用ruby进行构建
+或者使用ruby进行构建
 ```
 bundle exec heel -p 3000 --no-launch-browser -r www/
 ```
@@ -76,7 +76,7 @@ We would like to thank the following projects for helping us achieve our goals:
 
 Open Source:
 
-* [firefeed](https://github.com/firebase/firefeed)
+* [firefeed](https://github.com/firebase/firefeed) Firefeed is a web app that lets users post small messages called sparks to their feed. You can follow other users, and their sparks will appear on your feed
 
 
 
