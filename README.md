@@ -10,7 +10,7 @@
 
 ### 授权
 ```HTML
-var wilddog = new Wilddog("https://wildfeed.firebaseio.com/");
+var wilddog = new Wilddog("https://wildfeed.wilddogio.com/");
 
 // 监控登录状态的变化
 var authClient = new WilddogSimpleLogin(chatRef, function(error, user) {
